@@ -81,7 +81,7 @@ export const projects: IProject[] = [
 		description: 'Just another website.',
 		name: 'florianwendelborn.com',
 		source: 'https://github.com/FlorianWendelborn/florianwendelborn.com',
-		tags: ['Django', 'React', 'TypeScript'],
+		tags: ['Django', 'Docker', 'React', 'TypeScript'],
 		type: 'business',
 	},
 	{
@@ -90,7 +90,7 @@ export const projects: IProject[] = [
 		description:
 			'Enterprise application that helps big companies find suitable parts for 3D printing.',
 		name: 'AM Part Identifier',
-		tags: ['Django', 'Vue.js', 'TypeScript', 'Microservices'],
+		tags: ['Django', 'Docker', 'Microservices', 'TypeScript', 'Vue.js'],
 		type: 'contract',
 	},
 	{

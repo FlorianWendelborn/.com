@@ -1,6 +1,10 @@
 version: '3.5'
 services:
-  backend:
-    build: backend
   frontend:
     build: frontend
+    depends_on:
+      - proxy
+    restart: unless-stopped
+  proxy:
+    build: proxy
+    restart: unless-stopped
