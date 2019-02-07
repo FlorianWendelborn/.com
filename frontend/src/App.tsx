@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 
 // components
 import * as ReactTooltip from 'react-tooltip'
-import { Footer } from './components/Footer'
+// import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 
 // views
@@ -23,7 +23,7 @@ export class App extends React.Component {
 					<Route exact={true} path="/contact" component={ContactView} />
 					<Route exact={true} path="/creations" component={CreationsView} />
 				</main>
-				<Footer />
+				{/* <Footer /> */}
 				<ReactTooltip effect="solid" />
 			</div>
 		)

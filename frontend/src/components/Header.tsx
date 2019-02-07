@@ -67,7 +67,7 @@ const NavbarEnd = () => (
 		{socialLinks.map((socialLink) => (
 			<SocialLink {...socialLink} />
 		))}
-		<div className="navbar-item has-dropdown is-hoverable">
+		{/* <div className="navbar-item has-dropdown is-hoverable">
 			<a className="navbar-link">More</a>
 			<div className="navbar-dropdown">
 				<a className="navbar-item">About</a>
@@ -76,7 +76,7 @@ const NavbarEnd = () => (
 				<hr className="navbar-divider" />
 				<a className="navbar-item">Report an issue</a>
 			</div>
-		</div>
+		</div> */}
 	</div>
 )
 
