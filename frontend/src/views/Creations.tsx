@@ -33,7 +33,12 @@ const Project = (props: IProject) => (
 					</div>
 					<div className="level-right">
 						{Boolean(props.source) && (
-							<a className="level-item" data-tip="View Source Code">
+							<a
+								className="level-item"
+								data-tip="View Source Code"
+								href={props.source}
+								target="_blank"
+							>
 								<span className="icon">
 									<i className="fas fa-code-branch" />
 								</span>
@@ -41,7 +46,7 @@ const Project = (props: IProject) => (
 						)}
 						{Boolean(props.demo) && (
 							<div className="level-item">
-								<a href={props.demo} className="button">
+								<a href={props.demo} target="_blank" className="button">
 									Check It Out
 								</a>
 							</div>
