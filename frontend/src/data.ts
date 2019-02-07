@@ -28,39 +28,45 @@ export interface ISocialLink {
 	name: string
 	to: string
 	icon: string
-	type: 'external' | 'internal'
+	isImportant: boolean
 }
 
 export const socialLinks: ISocialLink[] = [
 	{
-		icon: 'fas fa-envelope',
-		name: 'Email',
-		to: '/contact',
-		type: 'internal',
+		icon: 'fab fa-linkedin',
+		isImportant: true,
+		name: 'LinkedIn',
+		to: 'https://www.linkedin.com/in/florian-wendelborn',
 	},
 	{
 		icon: 'fab fa-github',
+		isImportant: true,
 		name: 'GitHub',
 		to: 'https://github.com/FlorianWendelborn',
-		type: 'external',
 	},
 	{
 		icon: 'fab fa-medium',
+		isImportant: false,
 		name: 'Medium',
 		to: 'https://medium.com/@FlorianWendelborn',
-		type: 'external',
 	},
 	{
 		icon: 'fab fa-twitter',
+		isImportant: false,
 		name: 'Twitter',
 		to: 'https://twitter.com/@FloWendelborn',
-		type: 'external',
 	},
 	{
 		icon: 'fab fa-youtube',
+		isImportant: false,
 		name: 'YouTube',
-		to: 'https://youtube.com',
-		type: 'external',
+		to: 'https://youtube.com/channel/UCLaD0U_1AfpcdUy0lOfcfDw',
+	},
+	{
+		icon: 'fab fa-keybase',
+		isImportant: false,
+		name: 'Keybase',
+		to: 'https://keybase.io/dodekeract',
 	},
 ]
 

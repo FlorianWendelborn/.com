@@ -6,81 +6,35 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 
 // data
-import { headerLinks, IHeaderLink, ISocialLink, socialLinks } from '../data'
+import { headerLinks, ISocialLink, socialLinks } from '../data'
 
-const SocialLink = (props: ISocialLink) => {
-	switch (props.type) {
-		case 'external':
-			return (
-				<a
-					data-tip={props.name}
-					className="navbar-item"
-					target="_blank"
-					href={props.to}
-				>
-					<span className="icon">
-						<i className={`fa-lg ${props.icon}`} />
-					</span>
-				</a>
-			)
-		case 'internal':
-			return (
-				<Link data-tip={props.name} className="navbar-item" to={props.to}>
-					<span className="icon">
-						<i className={`fa-lg ${props.icon}`} />
-					</span>
-				</Link>
-			)
-	}
-}
-
-const NavbarBrand = () => (
-	<div className="navbar-brand">
-		<Link className="navbar-item" to="/">
-			<img src={Logo} height="28" width="28" />
-			<span style={{ marginLeft: '1em' }}>Welcome</span>
-		</Link>
-		<a
-			role="button"
-			className="navbar-burger burger"
-			aria-label="menu"
-			aria-expanded="false"
-			data-target="navbarBasicExample"
-		>
-			<span aria-hidden="true" />
-			<span aria-hidden="true" />
-			<span aria-hidden="true" />
-		</a>
-	</div>
+const VisibleSocialLink = (props: ISocialLink) => (
+	<a
+		data-tip={props.name}
+		className="navbar-item"
+		target="_blank"
+		href={props.to}
+	>
+		<span className="icon">
+			<i className={`fa-lg ${props.icon}`} />
+		</span>
+	</a>
 )
 
-const HeaderLink = (props: IHeaderLink) => {
-	return (
-		<Link data-tip={props.tooltip} className="navbar-item" to={props.to}>
-			<span>{props.label}</span>
-		</Link>
-	)
-}
-
-const NavbarEnd = () => (
-	<div className="navbar-end">
-		{socialLinks.map((socialLink) => (
-			<SocialLink {...socialLink} />
-		))}
-		{/* <div className="navbar-item has-dropdown is-hoverable">
-			<a className="navbar-link">More</a>
-			<div className="navbar-dropdown">
-				<a className="navbar-item">About</a>
-				<a className="navbar-item">Jobs</a>
-				<a className="navbar-item">Contact</a>
-				<hr className="navbar-divider" />
-				<a className="navbar-item">Report an issue</a>
-			</div>
-		</div> */}
-	</div>
+const HiddenSocialLink = (props: ISocialLink) => (
+	<a className="navbar-item" target="_blank" href={props.to}>
+		<span className="icon" style={{ marginRight: '1rem' }}>
+			<i className={`fa-lg ${props.icon}`} />
+		</span>
+		<span>{props.name}</span>
+	</a>
 )
 
 export class Header extends React.Component {
+	public state = {
+		isOpen: false,
+	}
+
 	public render() {
 		return (
 			<header>
@@ -90,18 +44,104 @@ export class Header extends React.Component {
 					aria-label="main navigation"
 				>
 					<div className="container">
-						<NavbarBrand />
-						<div className="navbar-menu">
-							<div className="navbar-start">
-								{headerLinks.map((headerLink) => (
-									<HeaderLink {...headerLink} />
-								))}
-							</div>
-							<NavbarEnd />
+						{this.renderBrand()}
+						<div
+							className={`navbar-menu ${this.state.isOpen ? 'is-active' : ''}`}
+						>
+							{this.renderLeft()}
+							{this.renderRightDesktop()}
+							{this.renderRightMobile()}
 						</div>
 					</div>
 				</nav>
 			</header>
 		)
+	}
+
+	private renderBrand() {
+		return (
+			<div className="navbar-brand">
+				<Link className="navbar-item" to="/">
+					<img src={Logo} height="28" width="28" />
+					<span style={{ marginLeft: '1em' }}>Florian Wendelborn</span>
+				</Link>
+				<a
+					role="button"
+					className={`navbar-burger burger ${
+						this.state.isOpen ? 'is-active' : ''
+					}`}
+					aria-label="menu"
+					aria-expanded="false"
+					onClick={this.toggleClick}
+				>
+					<span aria-hidden="true" />
+					<span aria-hidden="true" />
+					<span aria-hidden="true" />
+				</a>
+			</div>
+		)
+	}
+
+	private renderRightDesktop() {
+		const visible = socialLinks.filter((link) => link.isImportant)
+		const hidden = socialLinks.filter((link) => !link.isImportant)
+
+		return (
+			<div className="navbar-end is-hidden-touch">
+				<Link data-tip="Email" className="navbar-item" to="/contact">
+					<span className="icon">
+						<i className="fa-lg fas fa-envelope" />
+					</span>
+				</Link>
+				{visible.map((socialLink, index) => (
+					<VisibleSocialLink {...socialLink} key={index} />
+				))}
+				<div className="navbar-item has-dropdown is-hoverable">
+					<a className="navbar-link">More</a>
+					<div className="navbar-dropdown">
+						{hidden.map((socialLink, index) => (
+							<HiddenSocialLink {...socialLink} key={index} />
+						))}
+					</div>
+				</div>
+			</div>
+		)
+	}
+
+	private renderRightMobile() {
+		return (
+			<div className="navbar-end is-hidden-desktop">
+				<Link className="navbar-item" target="_blank" to="/contact">
+					<span className="icon" style={{ marginRight: '1rem' }}>
+						<i className="fa-lg fas fa-envelope" />
+					</span>
+					<span>Email</span>
+				</Link>
+				{socialLinks.map((socialLink, index) => (
+					<HiddenSocialLink {...socialLink} key={index} />
+				))}
+			</div>
+		)
+	}
+
+	private renderLeft() {
+		return (
+			<div className="navbar-start">
+				{headerLinks.map((link, index) => (
+					<Link
+						data-tip={link.tooltip}
+						className="navbar-item"
+						to={link.to}
+						key={index}
+					>
+						<span>{link.label}</span>
+					</Link>
+				))}
+			</div>
+		)
+	}
+
+	private toggleClick = () => {
+		this.setState({ isOpen: !this.state.isOpen })
 	}
 }
