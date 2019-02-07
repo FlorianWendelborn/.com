@@ -38,14 +38,8 @@ const ContactForm = () => (
 				<p className="help is-danger">This email is invalid</p>
 			</div>
 			<div className="field">
-				<label className="label">Subject</label>
 				<div className="control">
-					<div className="select">
-						<select>
-							<option>Select dropdown</option>
-							<option>With options</option>
-						</select>
-					</div>
+					<button className="button is-link">Submit</button>
 				</div>
 			</div>
 		</div>
@@ -60,6 +54,22 @@ export class ContactView extends React.Component {
 					title="Contact Me"
 					description="Feel free to get in touch. Doesn’t matter what it’s about."
 				/>
+				<section className="section">
+					<div className="container">
+						<article className="message is-warning">
+							<div className="message-header">
+								<p>Warning</p>
+							</div>
+							<div className="message-body">
+								This form doesn’t work yet. Please get in touch via{' '}
+								<a href="https://www.linkedin.com/in/florian-wendelborn">
+									LinkedIn
+								</a>{' '}
+								instead.
+							</div>
+						</article>
+					</div>
+				</section>
 				<ContactForm />
 			</>
 		)

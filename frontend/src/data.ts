@@ -17,11 +17,11 @@ export const headerLinks: IHeaderLink[] = [
 	// 	to: '/about',
 	// 	tooltip: 'Hobbies, Skills, and Résumé',
 	// },
-	// {
-	// 	icon: 'fas fa-handshake',
-	// 	label: 'Contact',
-	// 	to: '/contact',
-	// },
+	{
+		icon: 'fas fa-handshake',
+		label: 'Contact',
+		to: '/contact',
+	},
 ]
 
 export interface ISocialLink {
