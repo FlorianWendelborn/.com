@@ -13,7 +13,7 @@ interface IAboutState {
 }
 
 const Skill = (props: ISkill) => (
-	<article className="media">
+	<article className="media" data-tip={props.description}>
 		<figure className="media-left">
 			<p className="image is-24x24">
 				<img src={props.image} />

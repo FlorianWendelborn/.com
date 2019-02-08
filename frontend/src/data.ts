@@ -113,15 +113,19 @@ export const projects: IProject[] = [
 export interface ISkill {
 	name: string
 	image: any
+	description?: string
 }
 
 export const skills: ISkill[] = [
 	// languages
 	{
+		description:
+			'Combines the best of both worlds. The power of JS, and the IDE support of Java.',
 		image: require('devicon/icons/typescript/typescript-original.svg'),
 		name: 'TypeScript',
 	},
 	{
+		description: 'V8 Whisperer. Writing JavaScript since 2005...',
 		image: require('devicon/icons/javascript/javascript-original.svg'),
 		name: 'JavaScript',
 	},
@@ -132,20 +136,23 @@ export const skills: ISkill[] = [
 
 	// frameworks
 	{
+		description: 'React is just JavaScript. That’s why I like it.',
 		image: require('devicon/icons/react/react-original.svg'),
 		name: 'React',
 	},
 	{
+		description: 'I like its simplicity. I dislike its magic.',
 		image: require('devicon/icons/vuejs/vuejs-original.svg'),
 		name: 'Vue',
 	},
 	{
+		description: 'Using (and loving) Node since Version 0.5',
 		image: require('devicon/icons/nodejs/nodejs-original.svg'),
 		name: 'Node.js',
 	},
 	{
 		image: require('devicon/icons/django/django-original.svg'),
-		name: 'Django',
+		name: 'Django & Rest Framework',
 	},
 
 	// databases
@@ -160,14 +167,19 @@ export const skills: ISkill[] = [
 
 	// devops
 	{
+		description:
+			'The first thing I do with new software is writing a Dockerfile.',
 		image: require('devicon/icons/docker/docker-original.svg'),
 		name: 'Docker',
 	},
 	{
+		description: 'Using Git(Hub) since 2011',
 		image: require('devicon/icons/git/git-original.svg'),
 		name: 'Git',
 	},
 	{
+		description:
+			'I maintain multiple dedicated root servers and used Linux for years',
 		image: require('devicon/icons/linux/linux-original.svg'),
 		name: 'Linux',
 	},
@@ -182,16 +194,19 @@ export const skills: ISkill[] = [
 		name: 'SASS',
 	},
 	{
+		description: '1 Year of Experience with WebRTC Video',
 		image: require('devicon/icons/html5/html5-original.svg'),
-		name: 'HTML5',
+		name: 'HTML5 & WebRTC',
 	},
 
 	// build tools
 	{
+		description: 'I used to set-up Babel manually before vue-cli was a Thing',
 		image: require('devicon/icons/babel/babel-original.svg'),
 		name: 'Babel',
 	},
 	{
+		description: 'Can write Webpack Configurations from Scratch',
 		image: require('devicon/icons/webpack/webpack-original.svg'),
 		name: 'Webpack',
 	},
