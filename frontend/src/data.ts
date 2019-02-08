@@ -116,18 +116,21 @@ export interface ISkill {
 }
 
 export const skills: ISkill[] = [
+	// languages
 	{
-		image: require('devicon/icons/docker/docker-original.svg'),
-		name: 'Docker',
+		image: require('devicon/icons/typescript/typescript-original.svg'),
+		name: 'TypeScript',
 	},
 	{
 		image: require('devicon/icons/javascript/javascript-original.svg'),
 		name: 'JavaScript',
 	},
 	{
-		image: require('devicon/icons/git/git-original.svg'),
-		name: 'Git',
+		image: require('devicon/icons/python/python-original.svg'),
+		name: 'Python',
 	},
+
+	// frameworks
 	{
 		image: require('devicon/icons/react/react-original.svg'),
 		name: 'React',
@@ -137,13 +140,53 @@ export const skills: ISkill[] = [
 		name: 'Vue',
 	},
 	{
-		image: require('devicon/icons/typescript/typescript-original.svg'),
-		name: 'TypeScript',
+		image: require('devicon/icons/nodejs/nodejs-original.svg'),
+		name: 'Node.js',
+	},
+	{
+		image: require('devicon/icons/django/django-original.svg'),
+		name: 'Django',
+	},
+
+	// databases
+	{
+		image: require('devicon/icons/mongodb/mongodb-original.svg'),
+		name: 'MongoDB',
+	},
+	{
+		image: require('devicon/icons/postgresql/postgresql-original.svg'),
+		name: 'PostgreSQL',
+	},
+
+	// devops
+	{
+		image: require('devicon/icons/docker/docker-original.svg'),
+		name: 'Docker',
+	},
+	{
+		image: require('devicon/icons/git/git-original.svg'),
+		name: 'Git',
 	},
 	{
 		image: require('devicon/icons/linux/linux-original.svg'),
 		name: 'Linux',
 	},
+
+	// "languages"
+	{
+		image: require('devicon/icons/css3/css3-original.svg'),
+		name: 'CSS3',
+	},
+	{
+		image: require('devicon/icons/sass/sass-original.svg'),
+		name: 'SASS',
+	},
+	{
+		image: require('devicon/icons/html5/html5-original.svg'),
+		name: 'HTML5',
+	},
+
+	// build tools
 	{
 		image: require('devicon/icons/babel/babel-original.svg'),
 		name: 'Babel',
@@ -151,37 +194,5 @@ export const skills: ISkill[] = [
 	{
 		image: require('devicon/icons/webpack/webpack-original.svg'),
 		name: 'Webpack',
-	},
-	{
-		image: require('devicon/icons/django/django-original.svg'),
-		name: 'Django',
-	},
-	{
-		image: require('devicon/icons/mongodb/mongodb-original.svg'),
-		name: 'MongoDB',
-	},
-	{
-		image: require('devicon/icons/nodejs/nodejs-original.svg'),
-		name: 'Node.js',
-	},
-	{
-		image: require('devicon/icons/postgresql/postgresql-original.svg'),
-		name: 'PostgreSQL',
-	},
-	{
-		image: require('devicon/icons/python/python-original.svg'),
-		name: 'Python',
-	},
-	{
-		image: require('devicon/icons/css3/css3-original.svg'),
-		name: 'CSS3',
-	},
-	{
-		image: require('devicon/icons/html5/html5-original.svg'),
-		name: 'HTML5',
-	},
-	{
-		image: require('devicon/icons/sass/sass-original.svg'),
-		name: 'SASS',
 	},
 ]
