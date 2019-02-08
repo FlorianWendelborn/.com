@@ -11,12 +11,12 @@ export const headerLinks: IHeaderLink[] = [
 		label: 'Creations',
 		to: '/creations',
 	},
-	// {
-	// 	icon: 'fas fa-id-card-alt',
-	// 	label: 'About Me',
-	// 	to: '/about',
-	// 	tooltip: 'Hobbies, Skills, and Résumé',
-	// },
+	{
+		icon: 'fas fa-id-card-alt',
+		label: 'About Me',
+		to: '/about',
+		tooltip: 'Hobbies, Skills, and Résumé',
+	},
 	{
 		icon: 'fas fa-handshake',
 		label: 'Contact',
@@ -96,7 +96,7 @@ export const projects: IProject[] = [
 		description:
 			'Enterprise application that helps big companies find suitable parts for 3D printing.',
 		name: 'AM Part Identifier',
-		tags: ['Django', 'Docker', 'Microservices', 'TypeScript', 'Vue.js'],
+		tags: ['Django', 'Docker', 'Microservices', 'TypeScript', 'Vue'],
 		type: 'contract',
 	},
 	{
@@ -105,7 +105,83 @@ export const projects: IProject[] = [
 		description: 'NPM Package for advanced bitwise manipulation.',
 		name: 'Bitwise',
 		source: 'https://github.com/FlorianWendelborn/bitwise',
-		tags: ['TypeScript', 'Continuous Integration', 'Test-Driven Development'],
+		tags: ['Continuous Integration', 'Test-Driven Development', 'TypeScript'],
 		type: 'personal',
+	},
+]
+
+export interface ISkill {
+	name: string
+	image: any
+}
+
+export const skills: ISkill[] = [
+	{
+		image: require('devicon/icons/docker/docker-original.svg'),
+		name: 'Docker',
+	},
+	{
+		image: require('devicon/icons/javascript/javascript-original.svg'),
+		name: 'JavaScript',
+	},
+	{
+		image: require('devicon/icons/git/git-original.svg'),
+		name: 'Git',
+	},
+	{
+		image: require('devicon/icons/react/react-original.svg'),
+		name: 'React',
+	},
+	{
+		image: require('devicon/icons/vuejs/vuejs-original.svg'),
+		name: 'Vue',
+	},
+	{
+		image: require('devicon/icons/typescript/typescript-original.svg'),
+		name: 'TypeScript',
+	},
+	{
+		image: require('devicon/icons/linux/linux-original.svg'),
+		name: 'Linux',
+	},
+	{
+		image: require('devicon/icons/babel/babel-original.svg'),
+		name: 'Babel',
+	},
+	{
+		image: require('devicon/icons/webpack/webpack-original.svg'),
+		name: 'Webpack',
+	},
+	{
+		image: require('devicon/icons/django/django-original.svg'),
+		name: 'Django',
+	},
+	{
+		image: require('devicon/icons/mongodb/mongodb-original.svg'),
+		name: 'MongoDB',
+	},
+	{
+		image: require('devicon/icons/nodejs/nodejs-original.svg'),
+		name: 'Node.js',
+	},
+	{
+		image: require('devicon/icons/postgresql/postgresql-original.svg'),
+		name: 'PostgreSQL',
+	},
+	{
+		image: require('devicon/icons/python/python-original.svg'),
+		name: 'Python',
+	},
+	{
+		image: require('devicon/icons/css3/css3-original.svg'),
+		name: 'CSS3',
+	},
+	{
+		image: require('devicon/icons/html5/html5-original.svg'),
+		name: 'HTML5',
+	},
+	{
+		image: require('devicon/icons/sass/sass-original.svg'),
+		name: 'SASS',
 	},
 ]

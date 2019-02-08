@@ -1,6 +1,7 @@
 FROM node:10-alpine AS base
 
 WORKDIR /app/
+RUN apk --no-cache add git
 COPY yarn.lock .
 COPY package.json .
 RUN yarn install
