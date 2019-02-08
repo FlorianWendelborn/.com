@@ -21,6 +21,12 @@ const ContactForm = () => (
 				</div>
 			</div>
 			<div className="field">
+				<label className="label">Company (optional)</label>
+				<div className="control">
+					<input className="input" type="text" placeholder="SpaceX" />
+				</div>
+			</div>
+			<div className="field">
 				<label className="label">Email</label>
 				<div className="control has-icons-left has-icons-right">
 					<input

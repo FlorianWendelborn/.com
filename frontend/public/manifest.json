@@ -1,15 +1,20 @@
 {
-	"short_name": "React App",
-	"name": "Create React App Sample",
+	"short_name": "FW",
+	"name": "Florian Wendelborn",
 	"icons": [
 		{
-			"src": "favicon.ico",
-			"sizes": "64x64 32x32 24x24 16x16",
-			"type": "image/x-icon"
+			"src": "icon.png",
+			"sizes": "1024x1024",
+			"type": "image/png"
+		},
+		{
+			"src": "icon.svg",
+			"sizes": "2048x2048 1024x1024 512x512 256x256 128x128 64x64 32x32 16x16",
+			"type": "image/svg+xml"
 		}
 	],
 	"start_url": "./index.html",
 	"display": "standalone",
-	"theme_color": "#000000",
-	"background_color": "#ffffff"
+	"theme_color": "#E83F16",
+	"background_color": "#000000"
 }
