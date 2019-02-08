@@ -129,7 +129,10 @@ export class AboutView extends React.Component {
 								</div>
 							</div>
 							<div className="tile is-parent">
-								<article className="tile is-child box">TBA</article>
+								<article className="tile is-child box">
+									<h2 className="title">Achievements</h2>
+									<p>2006 New York Times’ Person of the Year</p>
+								</article>
 							</div>
 						</div>
 						<div className="tile is-parent">
