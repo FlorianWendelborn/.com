@@ -98,7 +98,7 @@ export class Header extends React.Component {
 				))}
 				<div className="navbar-item has-dropdown is-hoverable">
 					<a className="navbar-link">More</a>
-					<div className="navbar-dropdown">
+					<div className="navbar-dropdown is-right">
 						{hidden.map((socialLink, index) => (
 							<HiddenSocialLink {...socialLink} key={index} />
 						))}
