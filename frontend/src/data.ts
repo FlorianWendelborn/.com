@@ -9,7 +9,7 @@ export const headerLinks: IHeaderLink[] = [
 	{
 		icon: 'fas fa-project-diagram',
 		label: 'Creations',
-		to: '/creations',
+		to: '/creations/programs',
 	},
 	{
 		icon: 'fas fa-id-card-alt',
@@ -209,5 +209,50 @@ export const skills: ISkill[] = [
 		description: 'Can write Webpack Configurations from Scratch',
 		image: require('devicon/icons/webpack/webpack-original.svg'),
 		name: 'Webpack',
+	},
+]
+
+export interface ITalkEvent {
+	date: Date
+	link?: string
+	location: {
+		name: string
+		latitude: number
+		longitude: number
+	}
+	name: string
+}
+
+export interface ITalk {
+	events: ITalkEvent[]
+	name: string
+	description: string
+	tags: string[]
+}
+
+export const talks: ITalk[] = [
+	{
+		description:
+			'Why and how 3YOURMIND is using a user microservice in their Django application "AM Part Identifier".',
+		events: [
+			{
+				date: new Date(1547577000000),
+				link:
+					'https://www.meetup.com/django-user-group-berlin/events/qntnlhyzcbtb/',
+				location: {
+					latitude: 52.512571,
+					longitude: 13.316687,
+					name: '3YOURMIND GmbH',
+				},
+				name: 'Django User Group Berlin',
+			},
+		],
+		name: 'User Microservice in Django',
+		tags: [
+			'Lightning Talk',
+			'Django',
+			'Django Rest Framework',
+			'Microservices',
+		],
 	},
 ]
