@@ -3,58 +3,63 @@ import { IProject } from 'src/data'
 
 export class CreationsProject extends React.Component<IProject> {
 	public render() {
-		const { demo, description, name, tags, type, source } = this.props
+		const { demo, description, image, name, tags, type, source } = this.props
+
+		const icon = {
+			business: 'fas fa-briefcase',
+			contract: 'fas fa-file-contract',
+			personal: 'fas fa-user-alt',
+		}[type]
+
 		return (
-			<section className="section">
-				<div className="container">
-					<article className="media">
-						<figure className="media-left">
-							<p className="image is-128x128">
-								<img src="https://bulma.io/images/placeholders/256x256.png" />
-							</p>
+			<div className="card">
+				<header className="card-header">
+					<p className="card-header-title">{name}</p>
+					<div
+						className="card-header-icon"
+						data-tip={`${type} project`}
+						style={{ cursor: 'auto' }}
+					>
+						<span className="icon">
+							<i className={icon} />
+						</span>
+					</div>
+				</header>
+				{Boolean(image) && (
+					<div className="card-image">
+						<figure className="image is-16by9">
+							<img src={image} />
 						</figure>
-						<div className="media-content">
-							<div className="content">
-								<h1 className="title">
-									{name}{' '}
-									<span className="tag is-large is-black">{type} project</span>
-								</h1>
-								{description}
-							</div>
-							<nav className="level is-mobile">
-								<div className="level-left">
-									<div className="tags are-medium">
-										{tags.map((tag) => (
-											<span className="tag">{tag}</span>
-										))}
-									</div>
-								</div>
-								<div className="level-right">
-									{Boolean(source) && (
-										<a
-											className="level-item"
-											data-tip="View Source Code"
-											href={source}
-											target="_blank"
-										>
-											<span className="icon">
-												<i className="fas fa-code-branch" />
-											</span>
-										</a>
-									)}
-									{Boolean(demo) && (
-										<div className="level-item">
-											<a href={demo} target="_blank" className="button">
-												Check It Out
-											</a>
-										</div>
-									)}
-								</div>
-							</nav>
+					</div>
+				)}
+				<div className="card-content">
+					<div className="content">
+						{description}
+						<br />
+						<br />
+						<div className="tags">
+							{tags.map((tag, index) => (
+								<span className="tag" key={index}>
+									{tag}
+								</span>
+							))}
 						</div>
-					</article>
+						{/* <time dateTime={from}>{from}</time>–<time dateTime={to}>{to}</time> */}
+					</div>
 				</div>
-			</section>
+				<footer className="card-footer">
+					{Boolean(source) && (
+						<a className="card-footer-item" href={source} target="_blank">
+							View Source
+						</a>
+					)}
+					{Boolean(demo) && (
+						<a className="card-footer-item" href={demo} target="_blank">
+							Check It Out
+						</a>
+					)}
+				</footer>
+			</div>
 		)
 	}
 }

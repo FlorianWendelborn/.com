@@ -13,7 +13,7 @@ export class CreationsCategoryTalks extends React.Component {
 					<div className="container">
 						{talks.map((talk, index) => (
 							<article className="media" key={index}>
-								<figure className="media-left">
+								<figure className="media-left is-hidden-mobile">
 									<p className="image is-128x128">
 										<img src="https://bulma.io/images/placeholders/256x256.png" />
 									</p>
@@ -55,7 +55,14 @@ export class CreationsCategoryTalks extends React.Component {
 						}/${event.location.longitude}`}
 						target="_blank"
 					>
-						<p className="image is-128x128">
+						<p className="image is-128x128 is-hidden-mobile">
+							<img
+								src={`https://maps.wikimedia.org/img/osm-intl,13,${
+									event.location.latitude
+								},${event.location.longitude},256x256.png`}
+							/>
+						</p>
+						<p className="image is-64x64 is-hidden-desktop">
 							<img
 								src={`https://maps.wikimedia.org/img/osm-intl,13,${
 									event.location.latitude

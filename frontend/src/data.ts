@@ -74,6 +74,7 @@ export interface IProject {
 	date: string
 	demo?: string
 	description: string
+	image?: string
 	name: string
 	source?: string
 	tags: string[]
