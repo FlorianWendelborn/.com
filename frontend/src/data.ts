@@ -36,7 +36,7 @@ export const socialLinks: ISocialLink[] = [
 		icon: 'fab fa-linkedin',
 		isImportant: true,
 		name: 'LinkedIn',
-		to: 'https://www.linkedin.com/in/florian-wendelborn',
+		to: 'https://www.linkedin.com/in/florianwendelborn',
 	},
 	{
 		icon: 'fab fa-github',
