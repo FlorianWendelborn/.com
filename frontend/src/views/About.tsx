@@ -78,19 +78,19 @@ export class AboutView extends React.Component {
 				</div>
 				<div className="level-item has-text-centered">
 					<a
-						href="https://github.com/FlorianWendelborn?tab=following"
+						href="https://github.com/FlorianWendelborn?tab=followers"
 						target="_blank"
 					>
-						<p className="heading">Following</p>
+						<p className="heading">Followers</p>
 						<p className="title">{this.state.followers}</p>
 					</a>
 				</div>
 				<div className="level-item has-text-centered">
 					<a
-						href="https://github.com/FlorianWendelborn?tab=followers"
+						href="https://github.com/FlorianWendelborn?tab=following"
 						target="_blank"
 					>
-						<p className="heading">Followers</p>
+						<p className="heading">Following</p>
 						<p className="title">{this.state.following}</p>
 					</a>
 				</div>
