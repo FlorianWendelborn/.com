@@ -1,12 +1,9 @@
-// components
-import { CreationsProject } from './Project'
-
-// data
-import { projects } from 'src/data'
-
-// external
 import 'driveway/dist/driveway.min.css'
-import * as React from 'react'
+import React from 'react'
+
+import { projects } from '../../data'
+
+import { CreationsProject } from './Project'
 
 export class CreationsCategoryPrograms extends React.Component {
 	public render() {

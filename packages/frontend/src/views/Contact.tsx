@@ -1,5 +1,6 @@
-import * as React from 'react'
-import { Hero } from 'src/components/Hero'
+import React from 'react'
+
+import { Hero } from '../components/Hero'
 
 const ContactForm = () => (
 	<section className="section">

@@ -1,12 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 import { Route } from 'react-router-dom'
-
-// components
-import * as ReactTooltip from 'react-tooltip'
+import ReactTooltip from 'react-tooltip'
 
 import { Header } from './components/Header'
-
-// views
 import { AboutView } from './views/About'
 import { ContactView } from './views/Contact'
 import { CreationsView } from './views/creations/View'

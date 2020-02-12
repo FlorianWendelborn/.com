@@ -231,6 +231,8 @@ export interface ITalk {
 	tags: string[]
 }
 
+
+/* eslint-disable no-magic-numbers */
 export const talks: ITalk[] = [
 	{
 		description:
@@ -257,3 +259,4 @@ export const talks: ITalk[] = [
 		],
 	},
 ]
+/* eslint-enable no-magic-numbers */

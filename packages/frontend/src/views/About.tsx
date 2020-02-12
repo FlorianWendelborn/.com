@@ -1,10 +1,8 @@
-// components
-import { Hero } from 'src/components/Hero'
-
-// external
 import axios from 'axios'
-import * as React from 'react'
-import { ISkill, skills } from 'src/data'
+import React from 'react'
+
+import { Hero } from '../components/Hero'
+import { ISkill, skills } from '../data'
 
 interface IAboutState {
 	followers: null | number
@@ -12,6 +10,7 @@ interface IAboutState {
 	publicRepos: null | number
 }
 
+/* eslint-disable jsx-a11y/alt-text */
 const Skill = (props: ISkill) => (
 	<article className="media" data-tip={props.description}>
 		<figure className="media-left">
@@ -26,6 +25,7 @@ const Skill = (props: ISkill) => (
 		</div>
 	</article>
 )
+/* eslint-enable jsx-a11y/alt-text */
 
 export class AboutView extends React.Component {
 	public state: IAboutState = {
@@ -70,6 +70,7 @@ export class AboutView extends React.Component {
 				<div className="level-item has-text-centered">
 					<a
 						href="https://github.com/FlorianWendelborn?tab=repositories"
+						rel="noopener noreferrer"
 						target="_blank"
 					>
 						<p className="heading">Repositories</p>
@@ -79,6 +80,7 @@ export class AboutView extends React.Component {
 				<div className="level-item has-text-centered">
 					<a
 						href="https://github.com/FlorianWendelborn?tab=followers"
+						rel="noopener noreferrer"
 						target="_blank"
 					>
 						<p className="heading">Followers</p>
@@ -88,6 +90,7 @@ export class AboutView extends React.Component {
 				<div className="level-item has-text-centered">
 					<a
 						href="https://github.com/FlorianWendelborn?tab=following"
+						rel="noopener noreferrer"
 						target="_blank"
 					>
 						<p className="heading">Following</p>

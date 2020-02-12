@@ -1,11 +1,12 @@
-import { Hero } from 'src/components/Hero'
-import * as React from 'react'
+import React from 'react'
 import { Route } from 'react-router'
 
+import { Hero } from '../../components/Hero'
+
 import { CreationsCategoryPhotography } from './CategoryPhotography'
-import { CreationsNavigation } from './Navigation'
 import { CreationsCategoryPrograms } from './CategoryPrograms'
 import { CreationsCategoryTalks } from './CategoryTalks'
+import { CreationsNavigation } from './Navigation'
 
 export class CreationsView extends React.Component {
 	public render() {

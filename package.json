@@ -1,7 +1,32 @@
 {
+	"dependencies": {
+		"@metatypes/http-statuses": "^0.2.0"
+	},
 	"devDependencies": {
-		"lerna": "^3.20.2"
+		"@types/jest": "^25.1.2",
+		"@types/react-dom": "^16.9.5",
+		"@typescript-eslint/eslint-plugin": "^2.19.2",
+		"@typescript-eslint/parser": "^2.19.2",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-config-react-app": "^5.2.0",
+		"eslint-plugin-flowtype": "^4.6.0",
+		"eslint-plugin-import": "^2.20.1",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-react": "^7.18.3",
+		"eslint-plugin-react-hooks": "^2.3.0",
+		"lerna": "^3.20.2",
+		"prettier": "^1.18.2",
+		"typescript": "^3.7.5"
 	},
 	"name": "root",
-	"private": true
+	"private": true,
+	"scripts": {
+		"format": "prettier --write **/*.{tsx?,jsx?,json,css,ts,js,yml,md,html}",
+		"lint": "eslint . --ext .ts,.tsx,.js,.jsx --ignore-pattern node_modules --cache",
+		"start": "yarn --cwd packages/frontend run start"
+	},
+	"workspaces": [
+		"packages/*"
+	]
 }

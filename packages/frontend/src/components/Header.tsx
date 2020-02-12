@@ -1,12 +1,7 @@
-// assets
-
-// external
-import * as React from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import Logo from '../assets/icon.svg'
-
-// data
 import { headerLinks, ISocialLink, socialLinks } from '../data'
 
 const VisibleSocialLink = (props: ISocialLink) => (
@@ -14,6 +9,7 @@ const VisibleSocialLink = (props: ISocialLink) => (
 		data-tip={props.name}
 		className="navbar-item"
 		target="_blank"
+		rel="noopener noreferrer"
 		href={props.to}
 	>
 		<span className="icon">
@@ -23,7 +19,12 @@ const VisibleSocialLink = (props: ISocialLink) => (
 )
 
 const HiddenSocialLink = (props: ISocialLink) => (
-	<a className="navbar-item" target="_blank" href={props.to}>
+	<a
+		className="navbar-item"
+		target="_blank"
+		rel="noopener noreferrer"
+		href={props.to}
+	>
 		<span className="icon" style={{ marginRight: '1rem' }}>
 			<i className={`fa-lg ${props.icon}`} />
 		</span>
@@ -60,12 +61,14 @@ export class Header extends React.Component {
 	}
 
 	private renderBrand() {
+		/* eslint-disable jsx-a11y/anchor-is-valid */
 		return (
 			<div className="navbar-brand">
 				<Link className="navbar-item" to="/">
-					<img src={Logo} height="28" width="28" />
+					<img src={Logo} height="28" width="28" alt="Logo" />
 					<span style={{ marginLeft: '1em' }}>Florian Wendelborn</span>
 				</Link>
+
 				<a
 					role="button"
 					className={`navbar-burger burger ${
@@ -81,12 +84,14 @@ export class Header extends React.Component {
 				</a>
 			</div>
 		)
+		/* eslint-enable jsx-a11y/anchor-is-valid */
 	}
 
 	private renderRightDesktop() {
 		const visible = socialLinks.filter((link) => link.isImportant)
 		const hidden = socialLinks.filter((link) => !link.isImportant)
 
+		/* eslint-disable jsx-a11y/anchor-is-valid */
 		return (
 			<div className="navbar-end is-hidden-touch">
 				<Link data-tip="Email" className="navbar-item" to="/contact">
@@ -111,6 +116,7 @@ export class Header extends React.Component {
 				</div>
 			</div>
 		)
+		/* eslint-enable jsx-a11y/anchor-is-valid */
 	}
 
 	private renderRightMobile() {

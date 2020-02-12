@@ -1,5 +1,6 @@
-import * as React from 'react'
-import { IProject } from 'src/data'
+import React from 'react'
+
+import { IProject } from '../../data'
 
 export class CreationsProject extends React.Component<IProject> {
 	public render() {
@@ -28,7 +29,7 @@ export class CreationsProject extends React.Component<IProject> {
 				{Boolean(image) && (
 					<div className="card-image">
 						<figure className="image is-16by9">
-							<img src={image} />
+							<img alt="" src={image} />
 						</figure>
 					</div>
 				)}
@@ -49,12 +50,22 @@ export class CreationsProject extends React.Component<IProject> {
 				</div>
 				<footer className="card-footer">
 					{Boolean(source) && (
-						<a className="card-footer-item" href={source} target="_blank">
+						<a
+							className="card-footer-item"
+							href={source}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							View Source
 						</a>
 					)}
 					{Boolean(demo) && (
-						<a className="card-footer-item" href={demo} target="_blank">
+						<a
+							className="card-footer-item"
+							href={demo}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							Check It Out
 						</a>
 					)}

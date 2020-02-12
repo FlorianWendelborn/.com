@@ -1,33 +1,24 @@
-// data
-
-// external
-import * as moment from 'moment'
-import * as React from 'react'
+import moment from 'moment'
+import React from 'react'
 
 import { ITalkEvent, talks } from '../../data'
 
 const TalkEvent = (props: ITalkEvent) => {
-	const mapsLink = `https://www.openstreetmap.org/?mlat=${
-		props.location.latitude
-	}&mlon=${props.location.longitude}#map=17/${props.location.latitude}/${
-		props.location.longitude
-	}`
+	const mapsLink = `https://www.openstreetmap.org/?mlat=${props.location.latitude}&mlon=${props.location.longitude}#map=17/${props.location.latitude}/${props.location.longitude}`
 
-	const mapsPreviewImage = `https://maps.wikimedia.org/img/osm-intl,13,${
-		props.location.latitude
-	},${props.location.longitude},256x256.png`
+	const mapsPreviewImage = `https://maps.wikimedia.org/img/osm-intl,13,${props.location.latitude},${props.location.longitude},256x256.png`
 
 	const humanReadableDate = moment(props.date).format('YYYY-MM-DD HH:mm Z')
 
 	return (
 		<article className="media">
 			<figure className="media-left">
-				<a href={mapsLink} target="_blank">
+				<a href={mapsLink} target="_blank" rel="noopener noreferrer">
 					<p className="image is-128x128 is-hidden-mobile">
-						<img src={mapsPreviewImage} />
+						<img src={mapsPreviewImage} alt="map" />
 					</p>
 					<p className="image is-64x64 is-hidden-desktop">
-						<img src={mapsPreviewImage} />
+						<img src={mapsPreviewImage} alt="map" />
 					</p>
 				</a>
 			</figure>
@@ -39,7 +30,12 @@ const TalkEvent = (props: ITalkEvent) => {
 					{humanReadableDate}
 					<br />
 					<br />
-					<a className="button" href={props.link} target="_blank">
+					<a
+						className="button"
+						href={props.link}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						Event Website
 					</a>
 				</div>
@@ -58,7 +54,10 @@ export class CreationsCategoryTalks extends React.Component {
 							<article className="media" key={index}>
 								<figure className="media-left is-hidden-mobile">
 									<p className="image is-128x128">
-										<img src="https://bulma.io/images/placeholders/256x256.png" />
+										<img
+											alt="placeholder"
+											src="https://bulma.io/images/placeholders/256x256.png"
+										/>
 									</p>
 								</figure>
 								<div className="media-content">
