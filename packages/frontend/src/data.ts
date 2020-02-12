@@ -88,7 +88,7 @@ export const projects: IProject[] = [
 		description: 'Just another website.',
 		name: 'florianwendelborn.com',
 		source: 'https://github.com/FlorianWendelborn/florianwendelborn.com',
-		tags: ['Django', 'Docker', 'React', 'TypeScript'],
+		tags: ['Docker', 'React', 'TypeScript', 'Lerna'],
 		type: 'business',
 	},
 	{
@@ -230,7 +230,6 @@ export interface ITalk {
 	description: string
 	tags: string[]
 }
-
 
 /* eslint-disable no-magic-numbers */
 export const talks: ITalk[] = [
