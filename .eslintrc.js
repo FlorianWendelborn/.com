@@ -36,11 +36,7 @@ module.exports = {
 		'import/no-unassigned-import': [
 			'error',
 			{
-				allow: [
-					'@fortawesome/fontawesome-free/css/all.css',
-					'bulma/css/bulma.css',
-					'driveway/dist/driveway.min.css',
-				],
+				allow: ['**/*.css', '**/*.scss'],
 			},
 		],
 		'import/order': [

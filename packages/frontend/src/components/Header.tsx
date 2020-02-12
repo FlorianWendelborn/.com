@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import Logo from '../assets/icon.svg'
 import { headerLinks, ISocialLink, socialLinks } from '../data'
+
+import { Logo } from './Logo'
 
 const VisibleSocialLink = (props: ISocialLink) => (
 	<a
@@ -65,7 +66,7 @@ export class Header extends React.Component {
 		return (
 			<div className="navbar-brand">
 				<Link className="navbar-item" to="/">
-					<img src={Logo} height="28" width="28" alt="Logo" />
+					<Logo />
 					<span style={{ marginLeft: '1em' }}>Florian Wendelborn</span>
 				</Link>
 

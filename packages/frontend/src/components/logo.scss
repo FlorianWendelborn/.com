@@ -1,0 +1,64 @@
+$speed: 1;
+
+.ring-0 {
+	animation: spin #{64 * $speed}s linear infinite;
+	transform-origin: 50% 50%;
+}
+
+.ring-1 {
+	animation: spin #{32 * $speed}s linear infinite;
+	transform-origin: 50% 50%;
+}
+
+.ring-2 {
+	animation: spin #{16 * $speed}s linear infinite;
+	transform-origin: 50% 50%;
+}
+
+.ring-3 {
+	animation: spin #{8 * $speed}s linear infinite;
+	transform-origin: 50% 50%;
+}
+
+.ring-4 {
+	animation: spin #{4 * $speed}s linear infinite;
+	transform-origin: 50% 50%;
+}
+
+.ring-5 {
+	animation: spin #{2 * $speed}s linear infinite;
+	transform-origin: 50% 50%;
+}
+
+.dots-0-1 {
+	animation: spin #{48 * $speed}s linear infinite;
+	transform-origin: 50% 50%;
+}
+
+.dots-1-2 {
+	animation: spin #{24 * $speed}s linear infinite;
+	transform-origin: 50% 50%;
+}
+
+.dots-2-3 {
+	animation: spin #{12 * $speed}s linear infinite;
+	transform-origin: 50% 50%;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(90deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	75% {
+		transform: rotate(270deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
