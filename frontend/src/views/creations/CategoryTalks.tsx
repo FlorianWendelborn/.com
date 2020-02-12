@@ -5,6 +5,48 @@ import { ITalkEvent, talks } from '../../data'
 import * as moment from 'moment'
 import * as React from 'react'
 
+const TalkEvent = (props: ITalkEvent) => {
+	const mapsLink = `https://www.openstreetmap.org/?mlat=${
+		props.location.latitude
+	}&mlon=${props.location.longitude}#map=17/${props.location.latitude}/${
+		props.location.longitude
+	}`
+
+	const mapsPreviewImage = `https://maps.wikimedia.org/img/osm-intl,13,${
+		props.location.latitude
+	},${props.location.longitude},256x256.png`
+
+	const humanReadableDate = moment(props.date).format('YYYY-MM-DD HH:mm Z')
+
+	return (
+		<article className="media">
+			<figure className="media-left">
+				<a href={mapsLink} target="_blank">
+					<p className="image is-128x128 is-hidden-mobile">
+						<img src={mapsPreviewImage} />
+					</p>
+					<p className="image is-64x64 is-hidden-desktop">
+						<img src={mapsPreviewImage} />
+					</p>
+				</a>
+			</figure>
+			<div className="media-content">
+				<div className="content">
+					<h3>
+						{props.name} at {props.location.name}
+					</h3>
+					{humanReadableDate}
+					<br />
+					<br />
+					<a className="button" href={props.link} target="_blank">
+						Event Website
+					</a>
+				</div>
+			</div>
+		</article>
+	)
+}
+
 export class CreationsCategoryTalks extends React.Component {
 	public render() {
 		return (
@@ -33,7 +75,9 @@ export class CreationsCategoryTalks extends React.Component {
 										</div>
 									</div>
 									<h3>Events</h3>
-									{this.renderTalkEvents(talk.events)}
+									{talk.events.map((event, eventIndex) => (
+										<TalkEvent key={eventIndex} {...event} />
+									))}
 								</div>
 							</article>
 						))}
@@ -41,50 +85,5 @@ export class CreationsCategoryTalks extends React.Component {
 				</section>
 			</>
 		)
-	}
-
-	private renderTalkEvents(events: ITalkEvent[]) {
-		return events.map((event, index) => (
-			<article className="media" key={index}>
-				<figure className="media-left">
-					<a
-						href={`https://www.openstreetmap.org/?mlat=${
-							event.location.latitude
-						}&mlon=${event.location.longitude}#map=17/${
-							event.location.latitude
-						}/${event.location.longitude}`}
-						target="_blank"
-					>
-						<p className="image is-128x128 is-hidden-mobile">
-							<img
-								src={`https://maps.wikimedia.org/img/osm-intl,13,${
-									event.location.latitude
-								},${event.location.longitude},256x256.png`}
-							/>
-						</p>
-						<p className="image is-64x64 is-hidden-desktop">
-							<img
-								src={`https://maps.wikimedia.org/img/osm-intl,13,${
-									event.location.latitude
-								},${event.location.longitude},256x256.png`}
-							/>
-						</p>
-					</a>
-				</figure>
-				<div className="media-content">
-					<div className="content">
-						<h3>
-							{event.name} at {event.location.name}
-						</h3>
-						{moment(event.date).format('YYYY-MM-DD HH:mm Z')}
-						<br />
-						<br />
-						<a className="button" href={event.link} target="_blank">
-							Event Website
-						</a>
-					</div>
-				</div>
-			</article>
-		))
 	}
 }
