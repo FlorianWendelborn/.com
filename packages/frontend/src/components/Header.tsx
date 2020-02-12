@@ -1,9 +1,10 @@
 // assets
-import Logo from '../assets/icon.svg'
 
 // external
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+
+import Logo from '../assets/icon.svg'
 
 // data
 import { headerLinks, ISocialLink, socialLinks } from '../data'

@@ -1,9 +1,10 @@
 // data
-import { ITalkEvent, talks } from '../../data'
 
 // external
 import * as moment from 'moment'
 import * as React from 'react'
+
+import { ITalkEvent, talks } from '../../data'
 
 const TalkEvent = (props: ITalkEvent) => {
 	const mapsLink = `https://www.openstreetmap.org/?mlat=${

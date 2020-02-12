@@ -1,4 +1,4 @@
-FROM node:10-alpine AS base
+FROM node:12-alpine AS base
 
 WORKDIR /app/
 RUN apk --no-cache add git
@@ -20,6 +20,7 @@ COPY src src
 COPY images.d.ts .
 COPY tsconfig.json .
 COPY tsconfig.prod.json .
+
 RUN yarn run build
 
 ################################################################################

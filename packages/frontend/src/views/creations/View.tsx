@@ -1,13 +1,9 @@
-// components
 import { Hero } from 'src/components/Hero'
-import { CreationsNavigation } from './Navigation'
-
-// external
 import * as React from 'react'
 import { Route } from 'react-router'
 
-// views
 import { CreationsCategoryPhotography } from './CategoryPhotography'
+import { CreationsNavigation } from './Navigation'
 import { CreationsCategoryPrograms } from './CategoryPrograms'
 import { CreationsCategoryTalks } from './CategoryTalks'
 

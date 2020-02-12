@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 
 // components
 import * as ReactTooltip from 'react-tooltip'
+
 import { Header } from './components/Header'
 
 // views
