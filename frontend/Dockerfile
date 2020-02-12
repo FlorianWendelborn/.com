@@ -20,7 +20,6 @@ COPY src src
 COPY images.d.ts .
 COPY tsconfig.json .
 COPY tsconfig.prod.json .
-COPY tslint.json .
 RUN yarn run build
 
 ################################################################################
