@@ -45,6 +45,12 @@ export const socialLinks: ISocialLink[] = [
 		to: 'https://github.com/FlorianWendelborn',
 	},
 	{
+		icon: 'fab fa-instagram-square',
+		isImportant: false,
+		name: 'Instagram',
+		to: 'https://instagram.com/FlorianWendelborn',
+	},
+	{
 		icon: 'fab fa-medium',
 		isImportant: false,
 		name: 'Medium',
