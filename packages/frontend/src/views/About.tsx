@@ -140,7 +140,7 @@ export class AboutView extends React.Component {
 						</div>
 						<div className="tile is-parent">
 							<article className="tile is-child box">
-								<h2 className="title">Technolgies</h2>
+								<h2 className="title">Technologies</h2>
 								{skills.map((skill, index) => (
 									<Skill {...skill} key={index} />
 								))}
