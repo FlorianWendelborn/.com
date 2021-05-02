@@ -99,7 +99,7 @@ export const projects: IProject[] = [
 	},
 	{
 		date: '2018-2019',
-		demo: 'https://3yourmind.com/ampi',
+		demo: 'https://www.3yourmind.com/agile-plm/inventory-analysis',
 		description:
 			'Enterprise application that helps big companies find suitable parts for 3D printing.',
 		name: 'AM Part Identifier',
