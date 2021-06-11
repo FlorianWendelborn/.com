@@ -69,7 +69,7 @@ export class ContactView extends React.Component {
 							</div>
 							<div className="message-body">
 								This form doesn’t work yet. Please get in touch via{' '}
-								<a href="https://www.linkedin.com/in/florian-wendelborn">
+								<a href="https://www.linkedin.com/in/florianwendelborn">
 									LinkedIn
 								</a>{' '}
 								instead.
