@@ -58,7 +58,7 @@ export class AboutView extends React.Component {
 	private renderBasics() {
 		return (
 			<div>
-				I’m a full-stack web developer since 2005. I currently live in{' '}
+				I’ve been a full-stack web developer since 2005. I currently live in{' '}
 				<strong>Berlin, Germany</strong>.
 			</div>
 		)
